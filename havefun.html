@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/have_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="start">
+
+            <h1>Havefun</h1>
+            <span class="glyphicon glyphicon-search"></span>
+            <input type="text" placeholder="Explore your own activities">
+            <div></div>
+
+        </div>
+
+        <div class="showing">
+            <h2>
+                Showing 15 resultsby...
+            </h2>
+            <ul>
+                <li v-for=" ch in custom" v-bind:class="{ 'purple':iscl }" @mousemove="cl" @mouseout="cd">
+                    {{ch}}
+                    <span @click="dl" class="glyphicon glyphicon-remove-circle"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="message-box">
+            <img src="img/kogi.jpg" alt="">
+            <div class="message">
+                <h3>Kogi Cosby sweater</h3>
+                <p class="full">Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit
+                    est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat.
+                    Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel
+                    mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut
+                    suscipit justo.
+                </p>
+                <ul>
+                    <li>Ethan Foster</li>
+                    <li class="tag">Entertainment</li>
+                </ul>
+                <br>
+                <span class="glyphicon glyphicon-map-marker">
+                    <i>{{site}} city
+                        <i>
+                </span>
+                <span class="glyphicon glyphicon-calendar">
+                    <i>{{dateform}} - {{dateto}}
+                        <i>
+                </span>
+            </div>
+        </div>
+
+        <div class="message-box">
+            <img src="img/business.jpg" alt="">
+            <div class="message">
+                <h3>In the tumultuous business.</h3>
+                <p class="full">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that
+                    the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather
+                    one. So that for better or for worse, we two, for the time, were wedded; and should poor Queequeg sink
+                    to rise no more, then both usage and honour demanded, that instead of cutting the cord, it should drag
+                    me down in his.
+
+                </p>
+                <ul>
+                    <li>Herman Cobb</li>
+                    <li class="tag">Entertainment</li>
+                </ul>
+                <br>
+                <span class="glyphicon glyphicon-map-marker">
+                    <i>{{site}} city
+                        <i>
+                </span>
+                <span class="glyphicon glyphicon-calendar">
+                    <i>{{dateform}} - {{dateto}}
+                        <i>
+                </span>
+            </div>
+        </div>
+
+        <div class="message-box2">
+            <img src="img/hinted.jpg" alt="">
+            <div class="message2">
+                <h3>I have hinted that I would often jerk poor Queequeg from between the wha.</h3>
+                <p class="full">Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit
+                    est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat.
+                    Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel
+                    mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut
+                    suscipit justo.
+                </p>
+                <ul>
+                    <li>Ethan Foster</li>
+                    <li class="tag">Entertainment</li>
+                </ul>
+                <br>
+                <span class="glyphicon glyphicon-map-marker">
+                    <i>{{site}} city
+                        <i>
+                </span>
+                <span class="glyphicon glyphicon-calendar">
+                    <i>{{dateform}} - {{dateto}}
+                        <i>
+                </span>
+            </div>
+        </div>
+
+        <div class="location-box">
+            <label for="location">Location</label>
+            <input v-model='site' @click='' type="text" id="location" placeholder="  Taiwan">
+
+        </div>
+
+        <div class="date-box">
+            <p>Date</p>
+            <label for="date-form">form</label>
+            <input v-model='dateform' type="text" id="date-form" class="date-form">
+            <br>
+            <label for="date-to" class="to">to</label>
+            <input v-model='dateto' type="text" id="date-to" class="date-to">
+
+        </div>
+
+        <div class="categories-box">
+            <p>Custom Checkboxes</p>
+            <label class="container">All
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Entertainment
+                <input @click="ett" type="checkbox" checked="">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Food
+                <input @click="fd" type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Learning
+                <input @click="lear" type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Outdoors
+                <input @click="od" type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+
+
+        <div class="page">
+            <ul>
+                <li>
+                    <div>«</div>
+                </li>
+                <li>
+                    <div>1</div>
+                </li>
+                <li>
+                    <div>2</div>
+                </li>
+                <li>
+                    <div>3</div>
+                </li>
+                <li>
+                    <div>4</div>
+                </li>
+                <li>
+                    <div>5</div>
+                </li>
+                <li>
+                    <div>»</div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '.wrap',
+            data: {
+                site: 'Kaohsiung',
+                dateform: '2018/5/24',
+                dateto: '2018/5/31',
+                custom: ["Koahsiung", "Entertainment"],
+                iscl: false,
+
+            },
+            methods: {
+                ett: function () {
+                    this.custom.push("Entertainment")
+                },
+                fd: function () {
+                    this.custom.push("Food")
+                },
+                lear: function () {
+                    this.custom.push("Learning")
+                },
+                od: function () {
+                    this.custom.push("Outdoors")
+                },
+                dl: function () {
+                    this.custom.splice(this.custom.indoex, 1)
+                },
+                cl: function () {
+
+                    this.iscl = true;
+                },
+                cd: function (ch) {
+                    this.iscl = false;
+                },
+
+
+            }
+
+        })
+
+    </script>
+
+
+</body>
+
+</html>
